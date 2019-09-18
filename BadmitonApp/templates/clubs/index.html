@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>This is a Bootstrap style H1</h1>
+
+{% if club_list %}
+
+    <ul>
+    {% for club in club_list %}
+        <li><a href="/clubs/{{ club.id }}/">{{ club.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+      <p> clubs are not available </p>
+      {% endif %}
+
+{% endblock %}

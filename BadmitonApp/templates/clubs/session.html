@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for session in session_list %}
+<h1> {{ session.session_name }} </h1>
+<h1> {{ session.starting_time }} </h1>
+{% endfor %}
+
+
+{% endblock %}
