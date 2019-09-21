@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main role="main">
+  <!-- Main jumbrotron -->
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Find your perfect badminton match. Everytime.</h1>
+      <p class="lead text-muted">ShuttleSquad help you to find local badminton clubs and match you against great opposition using our algorithm.</p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Register</a>
+        <a href="#" class="btn btn-secondary my-2">See what else ShuttleSquad can do</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <h2 class="text-center">Browse local clubs near you.</h2>
+    <br>
+    <div class="container">
+      <div class="row">
+        {% if club_list %}
+          {% for club in club_list %}
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                  <h3>{{ club.name }}</h3>
+                  <p class="card-text">
+                    Location: {{ club.location }}<br>
+                    Nearest session on Sunday. <a href="#">Register</a>.
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+</main>
