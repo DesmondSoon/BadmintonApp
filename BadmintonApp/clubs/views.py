@@ -46,9 +46,9 @@ def session (request,id):
     return render(request, 'clubs/detail.html',context)
 
 
-#def player(request,id):
+# def player(request,id):
 #    player = Player.objects.get(id=id)
-
+#
 #    return HttpResponse("Player session {} name {}".format(id, player.name))
 
 #def match(request, id):

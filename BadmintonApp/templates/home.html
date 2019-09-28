@@ -9,7 +9,7 @@
       <h1 class="jumbotron-heading">Find your perfect badminton match. Everytime.</h1>
       <p class="lead text-muted">ShuttleSquad help you to find local badminton clubs and match you against great opposition using our algorithm.</p>
       <p>
-        <a href="#" class="btn btn-primary my-2">Register</a>
+        <a href="/player/{{Player.id}}" class="btn btn-primary my-2">Register</a>
         <a href="#" class="btn btn-secondary my-2">See what else ShuttleSquad can do</a>
       </p>
     </div>
@@ -28,11 +28,12 @@
                   <h3>{{ club.name }}</h3>
                   <p class="card-text">
                     Location: {{ club.location }}<br>
-                    Nearest session on Sunday. <a href="#">Register</a>.
+                    Nearest session on Sunday. <a href="/clubs/{{ club.id }}/">Register</a>.
                   </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <a href="/clubs/{{ club.id }}/" class="btn btn-sm btn-outline-secondary role="button">View</a>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>
                     <small class="text-muted">9 mins</small>
