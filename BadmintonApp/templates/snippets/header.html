@@ -10,30 +10,30 @@
           <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <!-- <h4 class="text-white">Contact</h4> -->
+          <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Login</a></li>
+            <!-- <li><a href="#" class="text-white">Login</a></li>
             <li><a href="#" class="text-white">Register</a></li>
-            <li><a href="#" class="text-white">Contact</a></li>
-            <li class="nav-item">
-              {% if not request.user.is_authenticated %}
-              <a class="nav-link" href="/login/">Login</a>
-                {% endif %}
-            </li>
+            <li><a href="#" class="text-white">Contact</a></li> -->
             <li class="nav-item">
               {% if request.user.is_authenticated %}
-                <a class="nav-link" href="/account/">Account</a>
+                <a class="text-white" href="/login/">Login</a>
               {% endif %}
             </li>
             <li class="nav-item">
               {% if request.user.is_authenticated %}
-                <a class="nav-link" href="/logout/">Logout</a>
+                <a class="text-white" href="/account/">Account</a>
               {% endif %}
             </li>
             <li class="nav-item">
-                {% if not request.user.is_authenticated %}
-                  <a class="btn btn-outline-primary" href="/register/">Register</a>
-                {% endif %}
+              {% if request.user.is_authenticated %}
+                <a class="text-white" href="/logout/">Logout</a>
+              {% endif %}
+            </li>
+            <li class="nav-item">
+              {% if request.user.is_authenticated %}
+                <a class="text-white"  href="/register/">Register</a>
+              {% endif %}
             </li>
           </ul>
         </div>
@@ -61,7 +61,7 @@
   </div>
   <div class="container">
 
-    </div>
+    <!-- </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -100,5 +100,5 @@
           </ul>
         </div>
       </nav>
-</div>
+</div> -->
 </header>

@@ -18,10 +18,12 @@ from django.urls import include, path
 
 from BadmintonApp.views import *
 from clubs.views import *
+from users.views import *
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clubs/', include('clubs.urls')),
-    path('',home_view, name='home_view'),
+    path('',home_view, name='home'),
+    path('register/',registration_view, name='register'),
 ]
