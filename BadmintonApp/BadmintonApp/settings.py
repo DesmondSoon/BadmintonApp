@@ -44,7 +44,10 @@ INSTALLED_APPS = [
 # personal apps
     'clubs',
     'players',
+    'users',
 ]
+
+AUTH_USER_MODEL = 'users.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
