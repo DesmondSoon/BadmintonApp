@@ -7,6 +7,9 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white">About</h4>
+          {% if request.user.is_authenticated%}
+              <p class="text-white"> Welcome {{request.user.username}}<p>
+          {% endif %}
           <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
@@ -16,8 +19,8 @@
             <li><a href="#" class="text-white">Register</a></li>
             <li><a href="#" class="text-white">Contact</a></li> -->
             <li class="nav-item">
-              {% if request.user.is_authenticated %}
-                <a class="text-white" href="/login/">Login</a>
+              {% if not request.user.is_authenticated %}
+                <a class="text-white" href="{% url 'login' %}">Login</a>
               {% endif %}
             </li>
             <li class="nav-item">
@@ -31,7 +34,7 @@
               {% endif %}
             </li>
             <li class="nav-item">
-              {% if request.user.is_authenticated %}
+              {% if not request.user.is_authenticated %}
                 <a class="text-white"  href="/register/">Register</a>
               {% endif %}
             </li>
